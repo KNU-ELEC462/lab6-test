@@ -75,7 +75,7 @@ cat <<EOF > test2.script
 sleep 20
 EOF
 
-$BIN test2.script > "$LOG2" 2>&1 &
+stdbuf -o0 -e0 $BIN test2.script > "$LOG2" 2>&1 &
 SHELL_PID=$!
 sleep 1.5
 
@@ -88,6 +88,7 @@ fi
 kill -TSTP "$SHELL_PID"
 sleep 1
 
+ls $LOG2
 cat $LOG2
 
 STATE=$(ps -o stat= -p "$CHILD_PID" 2>/dev/null)

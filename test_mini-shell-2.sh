@@ -86,6 +86,7 @@ if [[ -z "$CHILD_PID" ]]; then
 fi
 
 kill -TSTP "$SHELL_PID"
+kill -TSTP "$CHILD_PID"
 sleep 1
 
 ps -ef | grep mini-shell

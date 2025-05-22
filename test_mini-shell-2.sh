@@ -88,6 +88,8 @@ fi
 kill -TSTP "$SHELL_PID"
 sleep 1
 
+cat $LOG2
+
 STATE=$(ps -o stat= -p "$CHILD_PID" 2>/dev/null)
 PROC_STATE=$(grep State /proc/$CHILD_PID/status 2>/dev/null | awk '{print $2}')
 

@@ -89,6 +89,7 @@ kill -TSTP "$SHELL_PID"
 sleep 1
 
 ps -ef | grep mini-shell
+ps -ef | grep sleep
 ls $LOG2
 cat $LOG2
 

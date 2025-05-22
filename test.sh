@@ -31,7 +31,7 @@ if [ ! -f "${TEST_SCRIPT}" ]; then
   exit 1
 fi
 
-install_if_missing "expect"
+# install_if_missing "expect"
 
 # Run test
 echo "[INFO] Running test script for ${TARGET}"

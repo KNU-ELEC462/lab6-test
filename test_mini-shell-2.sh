@@ -75,7 +75,7 @@ cat <<EOF > test2.script
 sleep 20
 EOF
 
-stdbuf -o0 -e0 $BIN test2.script > "$LOG2" 2>&1 &
+$BIN test2.script > "$LOG2" 2>&1 &
 SHELL_PID=$!
 sleep 1.5
 
@@ -88,6 +88,7 @@ fi
 kill -TSTP "$SHELL_PID"
 sleep 1
 
+ps -ef | grep mini-shell
 ls $LOG2
 cat $LOG2
 

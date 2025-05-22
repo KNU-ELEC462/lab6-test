@@ -89,11 +89,6 @@ kill -TSTP "$SHELL_PID"
 kill -TSTP "$CHILD_PID"
 sleep 1
 
-ps -ef | grep mini-shell
-ps -ef | grep sleep
-ls $LOG2
-cat $LOG2
-
 STATE=$(ps -o stat= -p "$CHILD_PID" 2>/dev/null)
 PROC_STATE=$(grep State /proc/$CHILD_PID/status 2>/dev/null | awk '{print $2}')
 

@@ -8,6 +8,7 @@ OUTPUT_DIR="outputs_mini-shell-1"
 # Cleanup temporary test files on exit
 cleanup() {
   rm -f test*.script test_input.txt test_output.txt
+  pkill sleep
 }
 trap cleanup EXIT
 

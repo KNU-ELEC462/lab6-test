@@ -10,6 +10,7 @@ SCRIPT_FILE="test_fg_combined.script"
 # Cleanup temporary files on exit
 cleanup() {
   rm -f "$SCRIPT_FILE"
+  pkill sleep
 }
 trap cleanup EXIT
 

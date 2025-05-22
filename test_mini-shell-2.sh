@@ -11,6 +11,7 @@ LOG3="${OUTPUT_DIR}/test3_jobs.log"
 # Cleanup temporary files on exit
 cleanup() {
   rm -f test1.script test2.script test3.script
+  pkill sleep
 }
 trap cleanup EXIT
 

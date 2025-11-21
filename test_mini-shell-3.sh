@@ -56,7 +56,9 @@ fi
 
 # Send SIGTSTP (simulate Ctrl+Z)
 kill -TSTP "$SHELL_PID"
+kill -TSTP "$CHILD_PID"
 kill -STOP "$SHELL_PID"
+kill -STOP "$CHILD_PID"
 sleep 1
 
 STATE=$(ps -o stat= -p "$CHILD_PID" 2>/dev/null)
